@@ -1,0 +1,36 @@
+﻿@model WebApplication2.Models.Cliente
+@{
+    ViewBag.Title = "Novo Cliente";
+}
+
+<h2>NovoCliente</h2>
+
+@using (Html.BeginForm("InserirCliente", "Home", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        @Html.LabelFor(x => x.nome)<span>: </span>
+        @Html.EditorFor(x => x.nome)
+        @Html.ValidationMessageFor(x => x.nome)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.cep)<span>: </span>
+        @Html.EditorFor(x => x.cep)
+        @Html.ValidationMessageFor(x => x.cep)
+    </div>
+
+    <div>
+        @Html.LabelFor(x => x.dataNascimento)<span>: </span>
+        @Html.EditorFor(x => x.dataNascimento)
+        @Html.ValidationMessageFor(x => x.dataNascimento)
+    </div>
+
+    <br />
+
+    <div>
+        <input type="submit" value="Salvar" />
+    </div>
+
+    <script type="text/javascript" src="~/Scripts/jquery.validate.js"></script>
+
+}

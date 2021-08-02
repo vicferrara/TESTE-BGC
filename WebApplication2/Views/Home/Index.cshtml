@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebApplication2.Models.Cliente>
+@{
+    ViewBag.Title = "Lista de clientes";
+}
+
+<h2>Clientes cadastrados: </h2>
+@Html.ActionLink("Novo Cliente", "NovoCliente", "Home")
+
+<br />
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <td>Nome</td>
+            <td>Cep</td>
+            <td>Data de nascimento</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => item.nome)</td>
+                <td>@Html.DisplayFor(m => item.cep)</td>
+                <td>@Html.DisplayFor(m => item.dataNascimento)</td>
+            </tr>
+        }
+    </tbody>
+</table>
